@@ -2,10 +2,6 @@
     Design System - Ignite Call
 </h1>
 
-<h4 align='center'>
-Desafio 5 - Ignite 2023 🚀
-</h4>
-
  # 💻 Projeto
  O projeto deste módulo foi a elaboração de um Design System construído em React JS e Storybook com o objetivo de documentar, centralizar e padronizar os componentes de uma interface. Além disso foi utilizado monorepo no qual é um modelo de arquitetura onde todas as partes da aplicação estão alocadas em um único repositório, utilização do Turborepo para maximizar a eficiência no gerenciamento destes subrepositórios e diminuir o tempo do processo de build guardando uma versão em cache. Ao final do desenvolvimento, foi realizado a publicação do projeto no Github (Github Pages) e disponibilizado todos os pacotes e tokens desenvolvidos no NPM. 
  
