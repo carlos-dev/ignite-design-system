@@ -20,7 +20,7 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-     - name: Disable Git Credential Helper
+      - name: Disable Git Credential Helper
         run: git config --global --add core.askPass ""
 
       - name: Deploy storybook
