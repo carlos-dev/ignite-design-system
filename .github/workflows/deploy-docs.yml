@@ -22,9 +22,6 @@ jobs:
 
       - name: Deploy storybook
         working-directory: ./packages/docs
-        run: |
-          git config --global user.email "carlosandre1572@example.com"
-          git config --global user.name "carlos-dev"
-          npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
+        run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
