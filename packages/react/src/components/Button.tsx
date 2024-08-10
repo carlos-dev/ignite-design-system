@@ -1,5 +1,5 @@
 import { styled } from '../styles'
-import { ComponentProps, ElementType } from 'react'
+import { ComponentProps, ElementType, ReactNode } from 'react'
 
 export const Button = styled('button', {
   all: 'unset',
@@ -90,6 +90,10 @@ export const Button = styled('button', {
 
 export interface ButtonProps extends ComponentProps<typeof Button> {
   as?: ElementType
+  variant?: 'primary' | 'secondary' | 'tertiary'
+  size?: 'sm' | 'md'
+  disabled?: boolean
+  children?: ReactNode
 }
 
 Button.displayName = 'Button'

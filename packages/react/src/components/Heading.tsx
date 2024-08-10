@@ -1,4 +1,4 @@
-import { ComponentProps, ElementType } from 'react'
+import { ComponentProps, ElementType, ReactNode } from 'react'
 import { styled } from '../styles'
 
 export const Heading = styled('h2', {
@@ -27,6 +27,7 @@ export const Heading = styled('h2', {
 
 export interface HeadingProps extends ComponentProps<typeof Heading> {
   as?: ElementType
+  children: ReactNode
 }
 
 Heading.displayName = 'Heading'
