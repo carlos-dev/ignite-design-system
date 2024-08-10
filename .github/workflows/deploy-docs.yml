@@ -20,8 +20,10 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-      - name: Disable Git Credential Helper
-        run: git config --global --add core.askPass ""
+      - name: Setup git credentials
+        run: |
+          echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > $GITHUB_WORKSPACE/.git-credentials
+          git config --global credential.helper store
 
       - name: Deploy storybook
         working-directory: ./packages/docs
