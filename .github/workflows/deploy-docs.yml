@@ -20,13 +20,11 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-      - name: Setup git credentials
-        run: |
-          echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > $GITHUB_WORKSPACE/.git-credentials
-          git config --global credential.helper store
-
       - name: Deploy storybook
         working-directory: ./packages/docs
-        run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
+        run: |
+          git config --global user.email "carlosandre1572@example.com"
+          git config --global user.name "carlos-dev"
+          npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
         env:
-          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
