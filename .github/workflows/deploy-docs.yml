@@ -20,8 +20,10 @@ jobs:
       - run: npm ci
       - run: npm run build
 
+      - name: Change directory
+        run: cd packages/docs
+
       - name: Deploy storybook to GitHub Pages
-        working-directory: ./packages/docs
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
