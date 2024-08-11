@@ -17,7 +17,12 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies and build
+      - name: Install dependencies and build at root
+        run: |
+          npm ci
+          npm run build
+
+      - name: Navigate to docs and build
         run: |
           cd packages/docs
           npm ci
