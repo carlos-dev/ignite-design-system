@@ -17,11 +17,11 @@ jobs:
         with:
           node-version: 18
 
-      - run: npm ci
-      - run: npm run build
-
-      - name: Change directory
-        run: cd packages/docs
+      - name: Install dependencies and build
+        run: |
+          cd packages/docs
+          npm ci
+          npm run build
 
       - name: Deploy storybook to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
