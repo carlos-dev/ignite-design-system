@@ -20,8 +20,8 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-      - name: Deploy storybook
+      - name: Deploy storybook to GitHub Pages
         working-directory: ./packages/docs
-        run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
-        env:
-          GH_TOKEN: ${{ secrets.GH_PAT }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./storybook-static
