@@ -21,6 +21,9 @@ jobs:
         run: |
           npm ci
           npm run build
+        env:
+          TURBO_TOKEN: loiDbhqpbAjod3jA2DaSMFjc
+          TURBO_TEAM: carlos-andrs-projects
 
       - name: Navigate to docs and build
         run: |
